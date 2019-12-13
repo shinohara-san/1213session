@@ -27,15 +27,28 @@ $user_info = $stmt->fetchAll();
 
 <body>
   会員情報
-  <?php for ($i = 0; $i < count($user_info); $i++) : ?>
-    <div>id:　<?= $user_info[$i]['id'] ?></div>
-    <div>name:　<?= $user_info[$i]['name'] ?></div>
-    <div>email:　<?= $user_info[$i]['email'] ?></div>
-    <div>login id:　<?= $user_info[$i]['lid'] ?></div>
-    <div>login pass:　<?= $user_info[$i]['lpw'] ?></div>
-    <div>0:active/1:non active　→　<?= $user_info[$i]['life_flg'] ?></div>
-    <hr>
-  <?php endfor; ?>
+
+  <table border="1" style="border-color:#0000ff ; border-style:solid ; border-width:1px ;">
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>email</th>
+      <th>login id</th>
+      <th>login password</th>
+      <th>active</th>
+    </tr>
+    <?php for ($i = 0; $i < count($user_info); $i++) : ?>
+      <tr>
+        <td><?= $user_info[$i]['id'] ?></td>
+        <td><?= $user_info[$i]['name'] ?></td>
+        <td><?= $user_info[$i]['email'] ?></td>
+        <td><?= $user_info[$i]['lid'] ?></td>
+        <td><?= $user_info[$i]['lpw'] ?></td>
+        <td><?= $user_info[$i]['life_flg'] ?></td>
+      </tr>
+    <?php endfor; ?>
+  </table>
+
 </body>
 
 </html>
